@@ -16,19 +16,12 @@ function App() {
         <br />
           <div className='row-fluid text-center'>
             <div className='col-sm-4 col-xs-4'><Link to="/">Home</Link></div>
-            <div className='col-sm-4 col-xs-4'><Link to="/submitted">Jingle</Link></div>
           </div>
           <br /><br />
 
-      <div className="jumbotron landing">
+      <div className="jumbotron landing"></div>
+      <div className="jumbotron">
 
-<h3>
- We've lost about 1.2 million square miles of wild land over the past 20 years, - that’s about the size of Alaska plus California.
-</h3>
-
-        <img src="https://thumbs.gfycat.com/TanDistantBoaconstrictor-max-1mb.gif"/>
-        
-        <br/><br/><br/>
       </div>
 
           <Route exact path="/" component={Home} />
