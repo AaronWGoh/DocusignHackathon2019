@@ -1,0 +1,7 @@
+{
+  "name": "docusign-package",
+  "version": "1.0.0",
+  "dependencies": {
+    "@magenta/music": "^1.8.0"
+  }
+}
