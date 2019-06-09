@@ -1,24 +1,28 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Home } from "./Home.js";
+// import { Submitted } from "./Submitted.js";
+
+import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
+import { Container, Grid, Navbar, Nav, NavItem, Jumbotron, Button } from 'react-bootstrap';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Router>
+        <div className="container-fluid">
+        <br />
+          <div className='row-fluid text-center'>
+            <div className='col-sm-4 col-xs-4'><Link to="/">Home</Link></div>
+            <div className='col-sm-4 col-xs-4'><Link to="/submitted">Jingle</Link></div>
+          </div>
+          <br /><br />
+          <Route exact path="/" component={Home} />
+        </div>
+      </Router>
+
     </div>
   );
 }
