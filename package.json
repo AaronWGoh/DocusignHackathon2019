@@ -1,7 +1,28 @@
 {
-  "name": "docusign-package",
+  "name": "docusign2019",
   "version": "1.0.0",
   "dependencies": {
-    "@magenta/music": "^1.8.0"
-  }
+    "@magenta/music": "^1.8.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "description": "\"\"",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AaronWGoh/DocusignHackathon2019.git"
+  },
+  "keywords": [
+    "[]"
+  ],
+  "author": "\"\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AaronWGoh/DocusignHackathon2019/issues"
+  },
+  "homepage": "https://github.com/AaronWGoh/DocusignHackathon2019#readme"
 }

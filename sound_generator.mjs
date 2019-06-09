@@ -11,5 +11,3 @@ model
     player.start(samples[0])
   });
 
-
-export function
