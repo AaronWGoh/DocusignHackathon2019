@@ -83,6 +83,7 @@ PROTECT OUR PUBLIC LAND!
         <div id="harmony">
           <h2>Your voice - contributing to change</h2>
           <img src="https://thumbs.gfycat.com/TanDistantBoaconstrictor-max-1mb.gif"/>
+
         <Sound
            url={soundfile}
            playStatus={Sound.status.PLAYING}
@@ -109,12 +110,17 @@ Our world is precious, and climate change effects all living things. We are the 
     <Form.Control type="email" placeholder="name@example.com" />
   </Form.Group>
 
+  <Form.Group controlId="exampleForm.ControlInput1">
+    <Form.Label>Phone Number</Form.Label>
+    <Form.Control type="phone" placeholder="888-888-8888" />
+  </Form.Group>
+
   <Form.Group controlId="exampleForm.ControlTextarea1">
     <Form.Label>Comment</Form.Label>
     <Form.Control as="textarea" rows="3" />
   </Form.Group>
 
-  <Button variant="primary" type="submit" onClick={this.handleSubmit}>
+  <Button variant="primary" type="submit" href="https://cdn.glitch.com/2052cc29-e13d-4e5d-a692-aadbe3801616%2Fdoc.jpg?v=1560107592005" onClick={this.handleSubmit}>
     Submit
   </Button>
 

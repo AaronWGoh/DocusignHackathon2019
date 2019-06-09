@@ -17,8 +17,6 @@ function App() {
           <div className='row-fluid text-center'>
             <div className='col-sm-4 col-xs-4'><Link to="/">Home</Link></div>
           </div>
-          <br /><br />
-
       <div className="jumbotron landing"></div>
       <div className="jumbotron">
 
