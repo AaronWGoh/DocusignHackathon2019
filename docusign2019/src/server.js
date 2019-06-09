@@ -13,6 +13,7 @@ app.get('/', function(req, res) {
 
 app.get('/uploadSound', function(req, res) {
     console.log('received something');
+    console.log(req);
     res.send('uploadSound');
 }
 

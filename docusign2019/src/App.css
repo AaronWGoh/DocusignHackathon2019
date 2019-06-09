@@ -31,3 +31,12 @@
     transform: rotate(360deg);
   }
 }
+
+.landing {
+  background-image: url(http://www.conservationalliance.com/wp-content/uploads/2019/03/Manti-La-Sal-NF-Blue-Mtn-Roadless-Area-e1553013209314.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  color: white;
+  text-align: center;
+  height:100%;
+}

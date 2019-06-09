@@ -7,15 +7,34 @@ export class Home extends React.Component {
   constructor() {
     super();
     this.state = {
-      submitted: false,
-      value: ''
+      sound: '', 
+      submittedSound: false,
+      submittedPetition: false
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleUpload = this.handleUpload.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(e) {
-    this.setState({value: e.target.value});
+    this.setState({sound: e.target.value});
+  }
+
+  handleUpload(e) {
+    e.preventDefault();
+    axios.get('http://localhost:8080/uploadSound', {
+      params: {
+        uploadedFile: this.state.sound
+      }
+    })
+    .then(function(response){
+       console.log(response);
+       
+    })
+    .catch(function(error){
+       console.log(error);
+     }).then(() => this.setState({ submittedSound: true }));
+
   }
   handleSubmit(e) {
     console.log('hiiii');
@@ -24,46 +43,36 @@ export class Home extends React.Component {
     };
 
     this.state.success = true;
-    e.preventDefault();
-
-    axios.get('http://localhost:8080/uploadSound', {
-      params: {
-        uploadedFile: this.state.value
-      }
-    })
-     .then(function(response){
-       console.log(response);
-       
-   })
-     .catch(function(error){
-       console.log(error);
-     });
   }
 
   render() {
     return (
-    <div>
-      <div className="jumbotron landing">
-        <h2>Landing page</h2>
-        <br/><br/><br/>
-      </div>
+    <div className="formSection">
+      {!this.state.submittedSound &&
+        <Form id="soundForm" >
+<h1>
+SPEAK TO THE CONGRESS 
+PROTECT OUR PUBLIC LAND!
+</h1>
 
-      <div className="formSection">
-        <Form id="soundForm">
 
-          <h6>Make your voice heard now!</h6>
-          <input type="file" name="uploadedFile" value={this.state.value}
-                        className="inputfile" onChange={this.handleChange}/>
 
-          <Button variant="primary" type="submit" onClick={this.handleSubmit}>
-            Submit
+          <h1>Make your voice heard now!</h1>
+          <input type="file" name="uploadedFile" value={this.state.value} className="inputfile" onChange={this.handleChange}/>
+
+          <Button variant="primary" type="submit" onClick={this.handleUpload}>
+            Upload your voice!
           </Button>
 
         </Form>
-      </div>
+      }
+      {this.state.submittedSound &&
 
-    <div>
-<Form id="petitionForm">
+        <div>
+        <h2>Your voice - harmonized with nature</h2>
+
+
+        <Form id="petitionForm">
   <h5>Submit your petition now!</h5>
   <Form.Group controlId="exampleForm.ControlInput1">
     <Form.Label>Full Name</Form.Label>
@@ -108,9 +117,12 @@ export class Home extends React.Component {
 
 </Form>
 
+</div>
+      }
 
-          </div>
-          </div>
+
+    </div>
+
         );
   }
 }
